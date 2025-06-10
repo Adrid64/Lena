@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "rutas.dtd">
+<rutas>
+  <ruta>
+    <nombre>Pola de Lena - Mieres del Camín 5ª Etapa Camino de San Salvador</nombre>
+    <tipo>Senderismo</tipo>
+    <transporte>A pie</transporte>
+    <duracion>1 día</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>Ruta a pie que recorre la 5ª etapa del Camino de San Salvador, con hermosos paisajes y puntos históricos a lo largo del recorrido.</descripcion>
+    <personas>Personas en buena forma física</personas>
+    <inicio>
+      <lugar>Pola de Lena</lugar>
+      <direccion>carretera AS-242</direccion>
+      <coordenadas>
+        <longitud>-5.830541</longitud>
+        <latitud>43.158453</latitud>
+        <altitud>318.945</altitud>
+      </coordenadas>
+    </inicio>
+    <referencias>
+      <referencia>https://es.wikiloc.com/rutas-senderismo/pola-de-lena-mieres-del-camin-5a-etapa-camino-de-san-salvador-25282513</referencia>
+      <referencia>https://www.caminodesansalvador.org/etapa-pola-de-lena-mieres/</referencia>
+      <referencia>https://senderismoenasturias.es/mieres.htm</referencia>
+    </referencias>
+    <recomendacion>8</recomendacion>
+    <hitos>
+      <hito>
+        <nombre>Albergue de Peregrino</nombre>
+        <descripcion>Antiguo albergue de peregrinos situado en la localidad de Mieres del Camín, con una gran historia.</descripcion>
+        <coordenadas>
+          <longitud>-5.78023162</longitud>
+          <latitud>43.26324454</latitud>
+          <altitud>203.08184918</altitud>
+        </coordenadas>
+        <distancia unidad="km">15</distancia>
+        <galeriaFotos>
+          <fotografia>R1Albergue1.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Antiguo hospital</nombre>
+        <descripcion>Histórico hospital que servía como lugar de descanso para los peregrinos durante su travesía por el Camino de San Salvador.</descripcion>
+        <coordenadas>
+          <longitud>-5.7750</longitud>
+          <latitud>43.2515</latitud>
+          <altitud>210</altitud>
+        </coordenadas>
+        <distancia unidad="km">1.6</distancia>
+        <galeriaFotos>
+          <fotografia>R1Hospital2.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Estación Del Vasco</nombre>
+        <descripcion>Antigua estación de tren reconvertida en un importante hito turístico del Camino de San Salvador.</descripcion>
+        <coordenadas>
+          <longitud>-5.8030</longitud>
+          <latitud>43.2650</latitud>
+          <altitud>230</altitud>
+        </coordenadas>
+        <distancia unidad="km">4.7</distancia>
+        <galeriaFotos>
+          <fotografia>R1Estacion.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Iglesia</nombre>
+        <descripcion>Una iglesia histórica que forma parte del recorrido del Camino de San Salvador, conocida por su arquitectura medieval.</descripcion>
+        <coordenadas>
+          <longitud>-5.8201</longitud>
+          <latitud>43.2823</latitud>
+          <altitud>245</altitud>
+        </coordenadas>
+        <distancia unidad="km">3.5</distancia>
+        <galeriaFotos>
+          <fotografia>R1IglesiaUjo4.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Iglesia </nombre>
+        <descripcion>Una iglesia de interés histórico y cultural situada cerca del final de la etapa.</descripcion>
+        <coordenadas>
+          <longitud>-5.8321</longitud>
+          <latitud>43.2987</latitud>
+          <altitud>250</altitud>
+        </coordenadas>
+        <distancia unidad="km">7.7</distancia>
+        <galeriaFotos>
+          <fotografia>R1IglesiaJuan5.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+    </hitos>
+    <planimetria archivo="ruta1.kml"/>
+    <altimetria archivo="altimetria_ruta1.svg"/>
+  </ruta>
+
+  <ruta>
+    <nombre>Ruta por el bosque del Mofusu</nombre>
+    <tipo>Paisajística</tipo>
+    <transporte>A pie</transporte>
+    <duracion>5 horas</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>La ruta parte del barrio de La Caleya en Pola de Lena y discurre junto al río Naredo,
+           siguiendo tramos del antiguo camino real de Quirós a Lena. Atraviesa paisajes de ribera, bosques de castaños y hayedos, y alcanza lugares emblemáticos como la Ermita de La Flor y el Mayáu Vichares,
+            ofreciendo vistas panorámicas de la Sierra del Aramo. De dificultad media-alta, combina patrimonio natural, etnográfico y religioso en un entorno de alta montaña asturiana.</descripcion>
+    <personas>Personas en buena forma física</personas>
+    <inicio>
+      <lugar>Barrio de La Caleya en Pola de Lena</lugar>
+      <direccion>Entrando por el valle del río Naredo</direccion>
+      <coordenadas>
+        <longitud>-5.83009734</longitud>
+        <latitud>43.15767135</latitud>
+        <altitud>322.45</altitud>
+      </coordenadas>
+    </inicio>
+    <referencias>
+      <referencia>https://es.wikiloc.com/rutas-senderismo/ruta-por-el-bosque-del-mofusu-93636822</referencia>
+      <referencia>https://quehacerenlena.es/la-ermita-de-nuestra-senora-de-la-flor-un-enclave-que-visitar-cargado-de-tradicion/</referencia>
+      <referencia>https://ciclismoepico.com/puertos-de-montana/europa/espana/asturias/gamoniteiro/</referencia>
+    </referencias>
+    <recomendacion>9</recomendacion>
+    <hitos>
+      <hito>
+        <nombre>Antiguo molino</nombre>
+        <descripcion>Antiguo molino abandonado</descripcion>
+        <coordenadas>
+          <longitud>-5.85145994</longitud>
+          <latitud>43.15067751 </latitud>
+          <altitud>413.40</altitud>
+        </coordenadas>
+        <distancia unidad="km">2.2</distancia>
+        <galeriaFotos>
+          <fotografia>R2Molino1.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Ermita de La Flor</nombre>
+        <descripcion>La capilla era cuidada por un ermitaño cuya responsabilidad incluía una tarea muy importante: tañer la campana en días de niebla y tormenta para guiar a los viajeros en su ruta hacia Quirós.</descripcion>
+        <coordenadas>
+          <longitud>-5.85376932</longitud>
+          <latitud>43.15121823</latitud>
+          <altitud>408.27</altitud>
+        </coordenadas>
+        <distancia unidad="km">1</distancia>
+        <galeriaFotos>
+          <fotografia>R2Ermita2.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Transformador</nombre>
+        <descripcion>Antiguo transformador eléctrico en desuso de una explotación minera.</descripcion>
+        <coordenadas>
+          <longitud>-5.85747858</longitud>
+          <latitud>43.14674104</latitud>
+          <altitud>551.70</altitud>
+        </coordenadas>
+        <distancia unidad="km">1.2</distancia>
+        <galeriaFotos>
+          <fotografia>R2Transformador3.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Cabaña</nombre>
+        <descripcion>Pequeña cabaña al borde del bosque.</descripcion>
+        <coordenadas>
+          <longitud>-5.86516083</longitud>
+          <latitud>43.14352008</latitud>
+          <altitud>787.06</altitud>
+        </coordenadas>
+        <distancia unidad="km">2</distancia>
+        <galeriaFotos>
+          <fotografia>R2Cabaña4.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Vistas</nombre>
+        <descripcion>Punto panorámico con vistas al Gamoniteiro.</descripcion>
+        <coordenadas>
+          <longitud>-5.86610204</longitud>
+          <latitud>43.14388106</latitud>
+          <altitud>816.48</altitud>
+        </coordenadas>
+        <distancia unidad="km">0.2</distancia>
+        <galeriaFotos>
+          <fotografia>R2Gamoniteiro5.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+    </hitos>
+    <planimetria archivo="ruta2.kml"/>
+    <altimetria archivo="altimetria_ruta2.svg"/>
+  </ruta>
+
+  <!--RUTA 3-->
+  <ruta>
+    <nombre>Pola de Lena - barranco del peridiello</nombre>
+    <tipo>Paisajística y monumentos</tipo>
+    <transporte>A pie</transporte>
+    <duracion>3 horas</duracion>
+    <agencia>Sin agencia</agencia>
+    <descripcion>Ruta sencilla a pie desde pola de lena hasta el barranco del peridiello. Ruta con buenas vistas y algun monumento que ver.</descripcion>
+    <personas>Se puede hacer con niños</personas>
+    <inicio>
+      <lugar>Estación de tren de Pola de Lena</lugar>
+      <direccion>Bajando el rio Lena</direccion>
+      <coordenadas>
+        <longitud>-5.83104517</longitud>
+        <latitud>43.15905306</latitud>
+        <altitud>327.51</altitud>
+      </coordenadas>
+    </inicio>
+    <referencias>
+      <referencia>https://es.wikiloc.com/rutas-senderismo/pola-de-lena-115769041</referencia>
+      <referencia>https://www.turismoasturias.es/descubre/cultura/prerromanico/santa-cristina-de-lena</referencia>
+      <referencia>https://sendasdeasturias.es/</referencia>
+    </referencias>
+    <recomendacion>7</recomendacion>
+    <hitos>
+      <hito>
+        <nombre>Puente</nombre>
+        <descripcion>Puente que cruza el rio Lena.</descripcion>
+        <coordenadas>
+          <longitud>-5.82269668</longitud>
+          <latitud>43.13898193</latitud>
+          <altitud>330.14</altitud>
+        </coordenadas>
+        <distancia unidad="km">3</distancia>
+        <galeriaFotos>
+          <fotografia>R3Puente1.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Ruinas</nombre>
+        <descripcion>Ruinas en mitad de la naturaleza.</descripcion>
+        <coordenadas>
+          <longitud>-5.82185804</longitud>
+          <latitud>43.1387578</latitud>
+          <altitud>340.33</altitud>
+        </coordenadas>
+        <distancia unidad="km">0.1</distancia>
+        <galeriaFotos>
+          <fotografia>R3Ruinas2.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Fauna</nombre>
+        <descripcion>Lugar donde se pueden ver gallinas.</descripcion>
+        <coordenadas>
+          <longitud>-5.81507358</longitud>
+          <latitud>43.13149715</latitud>
+          <altitud>368.54</altitud>
+        </coordenadas>
+        <distancia unidad="km">1</distancia>
+        <galeriaFotos>
+          <fotografia>R3Fauna3.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Panorámica</nombre>
+        <descripcion>Vista panorámica de la naturaleza.</descripcion>
+        <coordenadas>
+          <longitud>-5.81318455</longitud>
+          <latitud>43.13287866</latitud>
+          <altitud>407.07</altitud>
+        </coordenadas>
+        <distancia unidad="km">0.3</distancia>
+        <galeriaFotos>
+          <fotografia>R3Panoramica4.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+      <hito>
+        <nombre>Iglesia</nombre>
+        <descripcion>Aislada e imponente iglesia prerrománica.</descripcion>
+        <coordenadas>
+          <longitud>-5.81421282</longitud>
+          <latitud>43.12757662</latitud>
+          <altitud>392.63</altitud>
+        </coordenadas>
+        <distancia unidad="km">1</distancia>
+        <galeriaFotos>
+          <fotografia>R3SitioReligioso5.jpg</fotografia>
+        </galeriaFotos>
+        <galeriaVideos/>
+      </hito>
+    </hitos>
+    <planimetria archivo="ruta3.kml"/>
+    <altimetria archivo="altimetria_ruta3.svg"/>
+  </ruta>
+</rutas>

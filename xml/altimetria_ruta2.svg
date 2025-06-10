@@ -1,0 +1,18 @@
+<svg width="800" height="430" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+  <polygon points="20.0,267.826278659612 273.33333333333337,227.72486772486775 388.4848484848485,229.9867724867725 526.6666666666667,166.74603174603175 756.969696969697,62.97178130511469 780.0,50.0 780.0,410 20,410" fill="lightgreen" stroke="black" stroke-width="2"/>
+  <line x1="20" x2="780" y1="410.0" y2="410.0" stroke="#00008B" stroke-width="4" stroke-dasharray="12,6" />
+  <text x="8" y="415.0" font-size="14" fill="#00008B">0</text>
+  <rect x="20.0" y="242.826278659612" width="45.0" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="23.0" y="256.826278659612" font-size="12" fill="white">Inicio</text>
+  <rect x="273.33333333333337" y="202.72486772486775" width="97.0" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="276.33333333333337" y="216.72486772486775" font-size="12" fill="white">Antiguo molino</text>
+  <rect x="388.4848484848485" y="204.9867724867725" width="116.5" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="391.4848484848485" y="218.9867724867725" font-size="12" fill="white">Ermita de La Flor</text>
+  <rect x="526.6666666666667" y="141.74603174603175" width="90.5" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="529.6666666666667" y="155.74603174603175" font-size="12" fill="white">Transformador</text>
+  <rect x="735.0" y="37.97178130511469" width="45.0" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="738.0" y="51.97178130511469" font-size="12" fill="white">Cabaña</text>
+  <rect x="735.0" y="1.0" width="45.0" height="20" fill="black" fill-opacity="0.7"/>
+  <text x="738.0" y="15.0" font-size="12" fill="white">Vistas</text>
+</svg>

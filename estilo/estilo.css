@@ -1,0 +1,515 @@
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: #FDB750;
+  color: #010100;
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: #350503;
+  background-color: transparent;
+}
+
+a:visited {
+  color: #010100;
+  background-color: transparent;
+}
+
+a:focus {
+  border-bottom: 0.2em solid #350503;
+  color: #350503;
+  background-color: transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border: 0.1rem solid #010100;
+  background-color: #FFFFFF;
+  color: #010100;
+}
+
+table thead {
+  background-color: #FD7F20;
+  border-bottom: 0.2rem solid #010100;
+}
+
+table thead th {
+  padding: 1rem;
+  border: 0.1rem solid #010100;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+table td,
+table th {
+  padding: 1rem;
+  border: 0.1rem solid #010100;
+}
+
+form {
+  background-color: #FD7F20;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1rem #00000066;
+  margin: 2rem auto;
+  width: 80%;
+  color: #010100;
+  max-width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 0.2rem solid #672e03;
+}
+
+form:hover {
+  transform: translateY(-0.5em);
+  box-shadow: 0 0.5em 1em #00000066;
+}
+
+form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #010100;
+  margin-bottom: 1em;
+}
+
+form label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+form select,
+form button {
+  width: 100%;
+  padding: 0.8em;
+  border: 0.3em solid #010100;
+  border-radius: 0.1em;
+}
+
+form button {
+  background-color: #900C3F;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 0.6em;
+}
+
+main>section:nth-of-type(3)>canvas {
+  border: 0.1em solid #000;
+  background-color: #eee;
+}
+
+main>section:nth-of-type(2)>figure {
+  display: inline-block;
+  margin: 1em;
+  cursor: move;
+}
+
+main>section:nth-of-type(2)>figure>img {
+  width: 12.125em;
+  height: 12.125em;
+}
+
+main>section:nth-of-type(3)>p {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+main>section:nth-of-type(4)>ul {
+  list-style-type: decimal;
+  margin-left: 1.25em;
+}
+
+form button:hover {
+  background-color: #E73879;
+  transform: scale(1.05);
+}
+
+h4 + ul {
+  background-color: #FD7F20; /* Color inheritance: coincide con <form> y <ol>, contraste validado sobre #FDB750 */
+  border: 0.2rem solid #672e03;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  list-style-type: disc;
+  list-style-position: inside;
+  box-shadow: 0 0.5rem 1rem #00000066;
+}
+h3 + dl {
+  background-color: #FFFFFF; /* Color inheritance: blanco sobre #FDB750, contraste verificado */
+  border: 0.1rem solid #010100;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  box-shadow: 0 0.5rem 1rem #0000001A;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+/* Specificity: h4 + ul > li */
+h4 + ul > li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Specificity: h4 + ul ul > li */
+h4 + ul ul > li {
+  margin-bottom: 0.5rem;
+}
+
+ol {
+  padding: 2rem;
+  margin: 2vw auto;
+  max-width: 90%;
+  background-color: #FD7F20;
+  border: 0.2rem solid #672e03;
+  border-radius: 0.5rem;
+  font-family: "Roboto", "Helvetica", sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+ol li {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 0.1rem solid #672e03;
+  border-radius: 0.3rem;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+ol li:last-child {
+  border-bottom: none;
+}
+
+section button {
+  margin-bottom: 1rem;
+  /* Añadir espacio debajo de los botones */
+  margin-right: 0.5rem;
+  /* Espacio entre botones */
+}
+
+p a {
+  color: #000;
+}
+
+p a:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem #00000026;
+}
+
+main section nav a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #FD7F20;
+  border: 0.1rem solid #010100;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+main section nav a:hover,
+main section nav a:focus {
+  background-color: #672e03;
+  color: #ffffff;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.5rem 1rem #00000026;
+  text-decoration: underline;
+}
+
+main>p+div {
+  height: 50vh;
+  width: 100%;
+  border: 0.2rem solid #ccc;
+  margin: 1rem 0;
+}
+
+
+
+@media (max-width: 768px) {
+  /* Ancho típico para móviles */
+  body>p {
+    display: none;
+    /* Oculta las migas de pan */
+  }
+}
+
+article {
+  background-color: #f0f4f8;
+  border: 0.3rem solid #010100;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem #0000001a;
+  font-family: 'Arial', sans-serif;
+  max-width: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.8rem 1.5rem #00000026;
+}
+
+article h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+article p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  margin-left: 1.2rem;
+}
+
+main article form {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2vw;
+  /* Usando vw para padding */
+  border: 0.1rem solid #e0e0e0;
+  border-radius: 0.8rem;
+  background-color: #f8f8f8;
+}
+
+main article form section {
+  padding: 1.5rem;
+  border: 0.05rem solid #f0f0f0;
+  border-radius: 0.6rem;
+  background-color: #fff;
+}
+
+main article form section h3 {
+  font-size: 1.1rem;
+  /* Usando rem para el tamaño de fuente */
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+main article form section label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  /* Usando rem para el tamaño de fuente */
+  color: #555;
+}
+
+main article button {
+  padding: 0.8rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1rem;
+  /* Usando rem para el tamaño de fuente */
+  transition: background-color 0.3s ease;
+}
+
+main article form section h3 {
+  font-size: 1.1rem;
+  /* Usando rem para el tamaño de fuente */
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+main article button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+main article p {
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  /* Usando rem para el tamaño de fuente */
+}
+
+main article {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2vw;
+  /* Usando vw para padding */
+  border: 0.1rem solid #e0e0e0;
+  border-radius: 0.8rem;
+  background-color: #fff7cb;
+}
+
+main article button:last-of-type {
+  /* Estilo para el botón "Volver a jugar" */
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+main article button:last-of-type:hover {
+  background-color: #1976D2;
+}
+
+/* Specificity: main > section > section + section > section */
+main > section > section + section > section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 0.3rem solid #010100;
+  border-radius: 0.5rem;
+  background-color: #fff7cb; /* Color inheritance: fondo blanco sobre cuerpo #FDB750, contraste validado */
+  box-shadow: 0 0.5rem 1rem #0000001A;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Specificity: main > section > section + section > section > h4 */
+main > section > section + section > section > h4 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Specificity: main > section > section + section > section dl */
+main > section > section + section > section dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+/* Specificity: main > section > section + section > section dl dt */
+main > section > section + section > section dl dt {
+  font-weight: bold;
+}
+
+/* Specificity: main > section > section + section > section dl dd */
+main > section > section + section > section dl dd {
+  margin: 0;
+}
+
+/* Specificity: main > section > section + section > section > section:last-of-type */
+main > section > section + section > section > section:last-of-type {
+  height: 18.75rem; /* 300px en rem */
+  width: 100%;
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+/* Specificity: @media (max-width: 768px) + main > section > section + section > section */
+@media (max-width: 768px) {
+  main > section > section + section > section {
+    /* redefiniendo márgenes y padding */
+    margin: 1rem 0; /* redefinido */
+    padding: 1rem;  /* redefinido */
+  }
+  main > section > section + section > section > h4 {
+    /* redefiniendo tamaño de fuente */
+    font-size: 1.5rem; /* redefinido */
+  }
+}
+
+
+/* =========================================================
+   OVERRIDE CARRUSEL: ancho máximo y centrado del bloque
+   ========================================================= */
+
+/* 1) Limitar el <article> a un ancho razonable y centrarlo */
+main > section:first-of-type > article {
+  /* Anula posibles max-width heredados */
+  max-width: 60rem;    /* Puedes cambiar a 800px si prefieres */
+  width: 100%;         /* Que ocupe el 100 % de ese max-width */
+  margin: 0 auto;      /* Centrar horizontalmente en su contenedor */
+
+  /* Ya estaba: */
+  position: relative;
+  overflow: hidden;
+
+  /* Altura fija o aspecto; aquí usamos 16:9 */
+  aspect-ratio: 16 / 9;
+  /* Si prefieres altura fija en lugar de aspect-ratio, comenta la línea anterior
+     y descomenta esta (p.ej. 400px):
+     height: 400px;
+  */
+}
+
+/* 2) Las imágenes deben llenar el ancho del article y posicionarse absolutamente */
+main > section:first-of-type > article > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+}
+
+/* 3) Botones (flechas) en centro vertical */
+main > section:first-of-type > article > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* 4) Botón “<” a la izquierda */
+main > section:first-of-type > article > button:nth-of-type(1) {
+  left: 1rem;
+}
+
+/* 5) Botón “>” a la derecha */
+main > section:first-of-type > article > button:nth-of-type(2) {
+  right: 1rem;
+}
+
+
+/* 6) En pantallas muy pequeñas, reducir un poco la altura */
+@media (max-width: 768px) {
+  main > section:first-of-type > article {
+    aspect-ratio: auto; 
+    height: 250px;
+  }
+}
+
+
+/* =============================================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================================= */
+/* Para pantallas pequeñas, ajustar márgenes y paddings */
+@media (max-width: 768px) {
+  main > section > article > section > section {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  main > section > article > section > section > h4 {
+    font-size: 1.5rem;
+  }
+
+  main > section > article > section > section > p {
+    font-size: 1rem;
+  }
+}

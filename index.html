@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Adrian Dumitru">
+  <meta name="description" content="Página principal con carrusel y sección de noticias">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Lena</title>
+
+  <link rel="stylesheet" href="estilo/estilo.css"/>
+  <link rel="stylesheet" href="estilo/layout.css"/>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/carrusel.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Lena</a></h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="gastronomia.html">Gastronomía</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="meteorología.html">Meteorología</a>
+      <a href="juego.html">Juego</a>
+      <a href="php/reservas.php">Reservas</a>
+      <a href="ayuda.html">Ayuda</a>
+    </nav>
+  </header>
+
+  <p>Estás en: <a href="index.html">Inicio</a></p>
+
+  <main>
+    <section>
+      <h2>Puntos de interés en Lena</h2>
+      <article aria-label="Carrusel de imágenes">
+        <img src="multimedia/imagenes/rec1.jpg" alt="Santa Cristina de Lena" />
+        <img src="multimedia/imagenes/rec2.jpg" alt="templo de San Antolín de Sotiello" />
+        <img src="multimedia/imagenes/rec3.jpg" alt="Iglesia de samartino" />
+        <img src="multimedia/imagenes/rec4.jpg" alt="Ermita de nuestra sra. de la flor" />
+        <img src="multimedia/imagenes/Situacion_Lena.png" alt="mapa de situacion de lena" />
+        <button aria-label="Boton de carrusel">&lt;</button>
+        <button aria-label="Boton de carrusel">&gt;</button>
+      </article>
+    </section>
+
+    <section>
+      <h2>Noticias sobre Lena y alrededores</h2>
+      <article>
+        <h3>Noticia</h3>
+        <p>Cargando noticias…</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

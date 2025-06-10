@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Adrian Dumitru" />
+    <meta name="description" content="piloto" />
+    <meta name="keywords" content="piloto" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Desktop</title>
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" sizes="16x16" />
+</head>
+
+<body>
+
+    <!-- Encabezado con navegación -->
+    <header>
+        <h1><a href="index.html">Lena</a></h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="gastronomia.html">Gastronomía</a>
+            <a href="rutas.html">Rutas</a>
+            <a href="meteorología.html">Meteorología</a>
+            <a href="juego.html">Juego</a>
+            <a href="php/reservas.php">Reservas</a>
+            <a href="ayuda.html">Ayuda</a>
+        </nav>
+    </header>
+
+    <p>Estas en: <a href="index.html">Inicio</a> &gt;&gt; Gastronomía</p>
+
+    <main>
+        <h2>Gastronomía</h2>
+
+        <!-- Sección Imagen adaptable -->
+        <section>
+            <h3>Plato tradicional</h3>
+            <p>caldereta de cordero</p>
+            <picture>
+                <source media="(max-width: 465px)" srcset="multimedia/imagenes/caldereta-de-cordero-mediana.jpg" />
+                <source media="(max-width: 799px)" srcset="multimedia/imagenes/caldereta-de-cordero.jpg" />
+                <img src="multimedia/imagenes/caldereta-de-cordero.jpg" alt="caldereta-de-cordero" />
+            </picture>
+        </section>
+
+
+
+        <!-- Sección de tabla de resultados de temporadas -->
+        <section>
+            <h3>Gastronomía del Concejo de Lena</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="th-plato" scope="col">Plato</th>
+                        <th id="th-descripcion" scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="row-1" scope="row">Pote de castañes</th>
+                        <td headers="row-1 th-descripcion">Guiso tradicional asturiano con castañas, ideal para el otoño.</td>
+                    </tr>
+                    <tr>
+                        <th id="row-2" scope="row">Arroz con leche</th>
+                        <td headers="row-2 th-descripcion">Postre cremoso de arroz, leche, azúcar y canela.</td>
+                    </tr>
+                    <tr>
+                        <th id="row-3" scope="row">Morcilla y chorizo</th>
+                        <td headers="row-3 th-descripcion">Embutidos típicos de cerdo, muy consumidos en el concejo.</td>
+                    </tr>
+                    <tr>
+                        <th id="row-4" scope="row">Cordero a la estaca</th>
+                        <td headers="row-4 th-descripcion">Carne de cordero asada a la estaca, preparada durante las romerías.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+    </main>
+
+    <!-- Lista desordenada -->
+    <section>
+        <h4>Platos Recomendados</h4>
+    <ul>
+        <li>Garbanzos</li>
+        <li>Truchas a la asturiana</li>
+        <li>Verdinas con almejas
+            <ul>
+                <li>Verdinas con marisco</li>
+                <li>Verdinas con carne</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Lista ordenada -->
+        <h4>Ganadores del concurso "La Callada por Respuesta"</h4>
+        <p>En el concejo de lena se celebra el concurso nacional de Callos de Lena, los ganadores de los distintos años son:</p>
+        <ol>
+            <li>La guisandera Cristina Rey</li>
+            <li>Lucía Fernández</li>
+            <li>Pilar Meana</li>
+        </ol>
+    </section>
+
+    <section>
+
+        <h3>Postres tradicionales</h3>
+    <dl>
+        <dt>Arroz con leche</dt>
+        <dd>Postre cremoso de arroz, leche, azúcar y canela.</dd>
+
+        <dt>Frisuelos</dt>
+        <dd>Crepes asturianos servidos con azúcar o miel.</dd>
+
+        <dt>Cuajada con miel</dt>
+        <dd>Cuajada fresca acompañada de miel.</dd>
+    </dl>
+
+
+    </section>
+   
+
+    <!-- Sección multimedia: -->
+    <section>
+        <h3>Carniceria Clemente Lena, Asturias</h3>
+        <video controls>
+            <source src="multimedia/videos/carniceria.mp4" type="video/mp4" />
+            <source src="multimedia/videos/carniceria.webm" type="video/webm" />
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </section>
+
+
+</body>
+
+</html>

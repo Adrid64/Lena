@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns="http://tempuri.org/rutas"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tempuri.org/rutas"
+           elementFormDefault="qualified">
+
+  <!-- Elemento raíz -->
+  <xs:element name="rutas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ruta" minOccurs="3" maxOccurs="unbounded" type="RutaType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Ruta -->
+  <xs:complexType name="RutaType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="tipo" type="xs:string"/>
+      <xs:element name="transporte" type="xs:string"/>
+      <xs:element name="fecha" type="xs:date" minOccurs="0"/>
+      <xs:element name="hora" type="xs:time" minOccurs="0"/>
+      <xs:element name="duracion" type="xs:string"/>
+      <xs:element name="agencia" type="xs:string"/>
+      <xs:element name="descripcion" type="xs:string"/>
+      <xs:element name="personas" type="xs:string"/>
+      <xs:element name="inicio" type="InicioType"/>
+      <xs:element name="referencias" type="ReferenciasType"/>
+      <xs:element name="recomendacion" type="RecomendacionType"/>
+      <xs:element name="hitos" type="HitosType"/>
+      <xs:element name="planimetria" type="ArchivoType"/>
+      <xs:element name="altimetria" type="ArchivoType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Inicio -->
+  <xs:complexType name="InicioType">
+    <xs:sequence>
+      <xs:element name="lugar" type="xs:string"/>
+      <xs:element name="direccion" type="xs:string"/>
+      <xs:element name="coordenadas" type="CoordenadasType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Coordenadas -->
+  <xs:complexType name="CoordenadasType">
+    <xs:sequence>
+      <xs:element name="longitud" type="xs:decimal"/>
+      <xs:element name="latitud" type="xs:decimal"/>
+      <xs:element name="altitud" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Referencias -->
+  <xs:complexType name="ReferenciasType">
+    <xs:sequence>
+      <xs:element name="referencia" type="xs:anyURI" minOccurs="3" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Recomendación -->
+  <xs:simpleType name="RecomendacionType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Hitos -->
+  <xs:complexType name="HitosType">
+    <xs:sequence>
+      <xs:element name="hito" type="HitoType" minOccurs="5" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Hito -->
+  <xs:complexType name="HitoType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="descripcion" type="xs:string"/>
+      <xs:element name="coordenadas" type="CoordenadasType"/>
+      <xs:element name="distancia" type="DistanciaType"/>
+      <xs:element name="galeriaFotos" type="GaleriaFotosType"/>
+      <xs:element name="galeriaVideos" type="GaleriaVideosType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Distancia -->
+  <xs:complexType name="DistanciaType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="unidad" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Galería de fotos -->
+  <xs:complexType name="GaleriaFotosType">
+    <xs:sequence>
+      <xs:element name="fotografia" type="xs:string" minOccurs="1" maxOccurs="5"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Galería de vídeos -->
+  <xs:complexType name="GaleriaVideosType">
+    <xs:sequence>
+      <xs:element name="video" type="xs:string" minOccurs="0" maxOccurs="3"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Planimetría / Altimetría -->
+  <xs:complexType name="ArchivoType">
+    <xs:attribute name="archivo" type="xs:string" use="required"/>
+  </xs:complexType>
+
+</xs:schema>
