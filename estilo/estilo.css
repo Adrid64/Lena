@@ -29,8 +29,8 @@ main {
 
 @media (max-width: 480px) {
   main {
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 }
 a:link {
@@ -469,8 +469,8 @@ main > section:first-of-type > article {
   position: relative;
   overflow: hidden;
 
-  /* Altura fija o aspecto; aquí usamos 16:9 */
-  aspect-ratio: 16 / 9;
+  height: 30em;
+  padding: 0.5rem;
   /* Si prefieres altura fija en lugar de aspect-ratio, comenta la línea anterior
      y descomenta esta (p.ej. 400px):
      height: 400px;
