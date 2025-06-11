@@ -396,45 +396,75 @@ main article button:last-of-type:hover {
   background-color: #1976D2;
 }
 
-/* Specificity: main > section > section + section > section */
+/* Contenedor de cada ruta */
 main > section > section + section > section {
   margin: 2rem 0;
   padding: 1.5rem;
   border: 0.3rem solid #010100;
   border-radius: 0.5rem;
-  background-color: #fff7cb; /* Color inheritance: fondo blanco sobre cuerpo #FDB750, contraste validado */
+  background-color: #fff7cb;
   box-shadow: 0 0.5rem 1rem #0000001A;
   display: grid;
   gap: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+
 }
 
-/* Specificity: main > section > section + section > section > h4 */
+/* Título de ruta */
 main > section > section + section > section > h4 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-/* Specificity: main > section > section + section > section dl */
+/* Definición de datos */
 main > section > section + section > section dl {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.5rem 1rem;
+  max-width: 100%;
 }
 
-/* Specificity: main > section > section + section > section dl dt */
+/* Términos */
 main > section > section + section > section dl dt {
   font-weight: bold;
 }
 
-/* Specificity: main > section > section + section > section dl dd */
+/* Valores */
 main > section > section + section > section dl dd {
   margin: 0;
+  overflow-wrap: break-word;
 }
 
-/* Specificity: main > section > section + section > section > section:last-of-type */
+/* Mapa dinámico */
 main > section > section + section > section > section:last-of-type {
   height: 18.75rem; /* 300px en rem */
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/*  Corrige desbordamiento de listas de hitos o referencias */
+main > section > section + section > section ul {
+  padding-left: 1.2rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/*  Evita que texto de <li> largos rompan layout */
+main > section > section + section > section li {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+
+/*  Contenedor de figura */
+main > section > section + section > section figure {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
 }
 
 /* =============================================================================
