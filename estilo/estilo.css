@@ -4,8 +4,35 @@ body {
   color: #010100;
   margin: 0;
   padding: 0;
+
+
+
+}
+main {
+  margin-left: 14vw;
+  margin-right: 14vw;
 }
 
+@media (max-width: 1024px) {
+  main {
+    margin-left: 6vw;
+    margin-right: 6vw;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
 a:link {
   color: #350503;
   background-color: transparent;
@@ -243,7 +270,6 @@ main>p+div {
   /* Ancho típico para móviles */
   body>p {
     display: none;
-    /* Oculta las migas de pan */
   }
 }
 

@@ -77,7 +77,7 @@ INSERT INTO `tipo_recursos` (`nombre_tipo`) VALUES
 INSERT INTO `recursos_turisticos`
   (`tipo_id`,`nombre`,`descripcion`,`limite_ocupacion`,`fecha_inicio`,`hora_inicio`,`fecha_fin`,`hora_fin`,`precio`,`otros_detalles`)
 VALUES
-  (1, 'Museo Histórico', 'Exhibición permanente de artefactos prehistóricos.', 30, '2025-06-10','09:00','2025-06-10','18:00', 5.00, NULL),
+  (1, 'Museo Histórico', 'Exhibición de artefactos prehistóricos.', 30, '2025-06-10','09:00','2025-06-10','18:00', 5.00, NULL),
   (2, 'Ruta de los Molinos', 'Paseo a pie por antiguos molinos del concejo.', 20, '2025-06-11','10:00','2025-06-11','14:00', 10.00, 'Dificultad baja'),
   (3, 'Restaurante Los Collacios', 'Degustación de platos típicos asturianos.', 50, '2025-06-01','13:00','2025-06-30','23:00', 25.00, 'Menú del día a 15€'),
   (4, 'Hotel Ruta de la plata', 'Alojamiento con vistas a la montaña.', 15, '2025-06-01','00:00','2025-12-31','23:59', 60.00, 'Incluye desayuno'),

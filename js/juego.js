@@ -33,7 +33,7 @@ class Juego {
         const $label = $("<label></label>");
         const $input = $("<input>").attr({
           type: "radio",
-          name: `p${idx}`, // Atributo name PERMITIDO y necesario
+          name: `p${idx}`,
           value: i
         });
         $label.append($input, ` ${opcion}`);
