@@ -511,6 +511,18 @@ main > section:first-of-type > article > button:nth-of-type(2) {
   right: 1rem;
 }
 
+/* Estilo responsive para elementos de video */
+main video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border: 0.2rem #010100; 
+  border-radius: 0.5rem;       
+  box-shadow: 0 0.5rem 1rem #00000033; 
+}
+
+
 
 /* 6) En pantallas muy pequeñas, reducir un poco la altura */
 @media (max-width: 768px) {
