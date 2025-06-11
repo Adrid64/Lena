@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <a href="../index.html">Inicio</a>
       <a href="../gastronomia.html">Gastronomía</a>
       <a href="../rutas.html">Rutas</a>
-      <a href="../meteorología.html">Meteorología</a>
+      <a href="../meteorologia.html">Meteorología</a>
       <a href="../juego.html">Juego</a>
       <a href="reservas.php">Reservas</a>
       <a href="../ayuda.html">Ayuda</a>
