@@ -410,6 +410,20 @@ main > section > section + section > section {
   box-sizing: border-box;
 
 }
+section > table {
+  width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border: 0.1rem solid #010100;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 1rem;
+}
 
 /* Título de ruta */
 main > section > section + section > section > h4 {
@@ -480,6 +494,28 @@ main > section > section + section > section figure {
   main > section > section + section > section > h4 {
     /* redefiniendo tamaño de fuente */
     font-size: 1.5rem; /* redefinido */
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table td,
+  table th {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.6rem;
+  }
+
+  table thead th {
+  padding: 0.3rem 0.4rem; 
+}
+
+
+  table caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 }
 
