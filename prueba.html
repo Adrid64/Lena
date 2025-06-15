@@ -1,0 +1,70 @@
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Reservas – Lena</title>
+  <link rel="stylesheet" href="estilo/estilo.css">
+  <link rel="stylesheet" href="estilo/layout.css">
+  <link rel="icon" href="multimedia/imagenes/favicon.ico" sizes="16x16">
+</head>
+<body>
+<header>
+  <h1><a href="index.html">Lena</a></h1>
+  <nav>
+    <a href="index.html">Inicio</a><a href="gastronomia.html">Gastronomía</a>
+    <a href="rutas.html">Rutas</a><a href="meteorologia.html">Meteorología</a>
+    <a href="juego.html">Juego</a><a href="reservas.php">Reservas</a>
+    <a href="ayuda.html">Ayuda</a>
+  </nav>
+</header>
+    <p>Estás en: <a href="index.html">Inicio</a> &gt;&gt; Reservas</p>
+
+<main>
+  <h2>Bienvenido, adrian</h2>
+
+    
+  <!-- selector de recurso -->
+  <section>
+    <h3>Recursos para reservar</h3>
+    <form method="GET" action="reservas.php">
+      <label>Recurso:
+        <select name="recurso_id" onchange="this.form.submit()">
+          <option value="">-- Selecciona --</option>
+                      <option value="4">
+              Hotel Ruta de la plata            </option>
+                      <option value="1">
+              Museo Histórico.            </option>
+                      <option value="5">
+              Observación de Aves            </option>
+                      <option value="3">
+              Restaurante Los Collacios            </option>
+                      <option value="2">
+              Ruta de los Molinos            </option>
+                  </select>
+      </label>
+    </form>
+  </section>
+
+  
+  <section>
+    <h3>Mis Reservas</h3>
+          <form method="GET" action="reservas.php">
+        <label>Selecciona una:
+          <select name="reserva_id" onchange="this.form.submit()">
+            <option value="">-- Selecciona --</option>
+                          <option value="102">
+                Hotel Ruta de la plata (2025-06-15)
+              </option>
+                          <option value="103">
+                Hotel Ruta de la plata (2025-06-15)
+              </option>
+                      </select>
+        </label>
+      </form>
+
+            </section>
+
+  <p><a href="php/logout.php">Cerrar sesión</a></p>
+</main>
+
+
+</body></html>

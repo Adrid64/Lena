@@ -111,49 +111,60 @@ $email     = $controller->email();
   <section>
     <h3>Datos personales</h3>
     <form action="register.php" method="POST">
-      <fieldset>
-        <p>
-          <label>
-            Nombre:
-            <input type="text" name="nombre"
-                   value="<?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>"
-                   required>
-          </label>
-        </p>
-        <p>
-          <label>
-            Apellidos:
-            <input type="text" name="apellidos"
-                   value="<?= htmlspecialchars($apellidos, ENT_QUOTES, 'UTF-8') ?>"
-                   required>
-          </label>
-        </p>
-        <p>
-          <label>
-            Email:
-            <input type="email" name="email"
-                   value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
-                   required>
-          </label>
-        </p>
-        <p>
-          <label>
-            Contraseña:
-            <input type="password" name="password" required>
-          </label>
-        </p>
-        <p>
-          <label>
-            Confirmar contraseña:
-            <input type="password" name="confirm_pass" required>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Registrar</button>
-        </p>
-      </fieldset>
-      <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a>.</p>
-    </form>
+  <fieldset>
+    <legend>Datos personales</legend>
+
+    <p>
+      <label for="nombre">Nombre</label>
+      <input type="text"
+             id="nombre"
+             name="nombre"
+             value="<?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>"
+             required>
+    </p>
+
+    <p>
+      <label for="apellidos">Apellidos</label>
+      <input type="text"
+             id="apellidos"
+             name="apellidos"
+             value="<?= htmlspecialchars($apellidos, ENT_QUOTES, 'UTF-8') ?>"
+             required>
+    </p>
+
+    <p>
+      <label for="email">Email</label>
+      <input type="email"
+             id="email"
+             name="email"
+             value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
+             required>
+    </p>
+
+    <p>
+      <label for="password">Contraseña</label>
+      <input type="password"
+             id="password"
+             name="password"
+             required>
+    </p>
+
+    <p>
+      <label for="confirm_pass">Confirmar contraseña</label>
+      <input type="password"
+             id="confirm_pass"
+             name="confirm_pass"
+             required>
+    </p>
+
+    <p>
+      <button type="submit">Registrar</button>
+    </p>
+  </fieldset>
+
+  <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a>.</p>
+</form>
+
   </section>
 </main>
 </body>
