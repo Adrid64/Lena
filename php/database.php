@@ -12,8 +12,9 @@ class Database {
         // Crear conexión
         $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
         // Comprobar errores
-        if ($this->conn->connect_error) {
-            die("Conexión fallida: " . $this->conn->connect_error);
+         if ($this->conn->connect_error) {
+            error_log("Conexión fallida: " . $this->conn->connect_error);
+            exit("Error de conexión a la base de datos.");
         }
         // Establecer conjunto de caracteres
         $this->conn->set_charset("utf8mb4");

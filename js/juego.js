@@ -1,5 +1,4 @@
 "use strict";
-
 class Juego {
   constructor(preguntas) {
     this.preguntas = preguntas;
@@ -12,11 +11,7 @@ class Juego {
   inicializar() {
     this.generarPreguntas();
 
-    // Desactivar botón hasta que todas estén respondidas
-    this.$botonEnviar.prop("disabled", true);
-
-    // Eventos
-    this.$formulario.on("change", () => this.actualizarEstadoBoton());
+    // El botón estará siempre activo
     this.$botonEnviar.on("click", (e) => {
       e.preventDefault();
       this.evaluarRespuestas();
@@ -24,46 +19,49 @@ class Juego {
   }
 
   generarPreguntas() {
-    this.preguntas.forEach((pregunta, idx) => {
-      const $seccion = $("<section></section>");
-      const $h3 = $("<h3></h3>").text(pregunta.texto);
-      $seccion.append($h3);
+  this.preguntas.forEach((pregunta, idx) => {
+    const $section = $("<section></section>")
+                     .append($("<h3></h3>").text(pregunta.texto));
 
-      pregunta.opciones.forEach((opcion, i) => {
-        const $label = $("<label></label>");
-        const $input = $("<input>").attr({
-          type: "radio",
-          name: `p${idx}`,
-          value: i
-        });
-        $label.append($input, ` ${opcion}`);
-        $seccion.append($label, $("<br>"));
+    pregunta.opciones.forEach((opc, i) => {
+      const $label = $("<label></label>")
+      const $input = $("<input>", {
+        type: "radio",
+        name: `p${idx}`,
+        value: i,
+        required: i === 0
       });
-
-      this.$formulario.append($seccion);
+      $label.append($input, ` ${opc}`);
+      $section.append($label);
     });
-  }
 
-  actualizarEstadoBoton() {
+    this.$formulario.append($section);
+  });
+}
+
+  evaluarRespuestas() {
+    // Validamos si todas están respondidas
     const todasRespondidas = this.preguntas.every((_, idx) =>
       this.$formulario.find(`input[name="p${idx}"]:checked`).length > 0
     );
-    this.$botonEnviar.prop("disabled", !todasRespondidas);
-  }
 
-  evaluarRespuestas() {
+    if (!todasRespondidas) {
+      this.$resultado.text("Debes contestar todas las preguntas.")
+      return;
+    }
+
     let puntos = 0;
-
     this.preguntas.forEach((preg, idx) => {
       const seleccion = this.$formulario.find(`input[name="p${idx}"]:checked`).val();
       if (parseInt(seleccion, 10) === preg.correcta) puntos++;
     });
 
-    this.$resultado.text(`Tu puntuación: ${puntos} / ${this.preguntas.length}`);
+    this.$resultado
+      .text(`Tu puntuación: ${puntos} / ${this.preguntas.length}`)
   }
 }
 
-// Inicialización usando jQuery como exige el enunciado
+// Inicialización
 $(document).ready(() => {
   const preguntas = [
     {

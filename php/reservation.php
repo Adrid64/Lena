@@ -3,7 +3,7 @@
 
 class Reservation
 {
-    private $db;
+    private mysqli $db;
 
     public function __construct()
     {
@@ -14,28 +14,39 @@ class Reservation
 
         $this->db = new mysqli($host, $user, $pass, $dbname);
         if ($this->db->connect_errno) {
-            die("Error de conexión MySQL: " . $this->db->connect_error);
+            throw new RuntimeException(
+                "Error de conexión MySQL: " . $this->db->connect_error
+            );
         }
+
         $this->db->set_charset("utf8mb4");
     }
 
     /**
-     * Inserta una reserva (varios días).
+     * Inserta una reserva 
      */
-    public function create($usuarioId, $recursoId, $fechaInicio, $dias, $horaEvento, $precioFinal, $numeroPersonas)
-    {
-        $sql = "INSERT INTO reservas (
-                    usuario_id, recurso_id, fecha_inicio_evento, dias, hora_evento,
-                    precio_final, numero_personas, fecha_reserva
-                )
-                VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_DATE)";
+    public function create(
+        int    $usuarioId,
+        int    $recursoId,
+        string $fechaInicio,
+        int    $dias,
+        string $horaEvento,
+        float  $precioFinal,
+        int    $numeroPersonas
+    ): bool {
+        $sql = "
+            INSERT INTO reservas (
+                usuario_id, recurso_id, fecha_inicio_evento, dias, hora_evento,
+                precio_final, numero_personas, fecha_reserva
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_DATE)
+        ";
 
         $stmt = $this->db->prepare($sql);
         if (!$stmt) {
             return false;
         }
 
-        // Se ajusta bind_param para reflejar 7 variables
         $stmt->bind_param(
             "iisisdi",
             $usuarioId,
@@ -53,12 +64,13 @@ class Reservation
     }
 
     /**
-     * Devuelve todas las reservas del usuario, incluyendo el nombre del recurso.
+     * Devuelve todas las reservas del usuario.
+     *
      */
-    public function getByUser($usuarioId)
+    public function getByUser(int $usuarioId): array
     {
         $sql = "
-            SELECT 
+            SELECT
                 r.id,
                 r.fecha_inicio_evento,
                 r.dias,
@@ -73,10 +85,12 @@ class Reservation
             WHERE r.usuario_id = ?
             ORDER BY r.fecha_inicio_evento DESC
         ";
+
         $stmt = $this->db->prepare($sql);
         if (!$stmt) {
             return [];
         }
+
         $stmt->bind_param("i", $usuarioId);
         $stmt->execute();
         $resultado = $stmt->get_result();
@@ -86,23 +100,29 @@ class Reservation
     }
 
     /**
-     * Elimina una reserva de la tabla (si pertenece al usuario).
+     * Elimina una reserva (si pertenece al usuario).
      */
-    public function cancel($reservaId, $usuarioId)
+    public function cancel(int $reservaId, int $usuarioId): bool
     {
         $sql = "
             DELETE FROM reservas
-            WHERE id = ?
-              AND usuario_id = ?
+            WHERE id = ? AND usuario_id = ?
         ";
+
         $stmt = $this->db->prepare($sql);
         if (!$stmt) {
             return false;
         }
+
         $stmt->bind_param("ii", $reservaId, $usuarioId);
         $stmt->execute();
         $filasAfectadas = $stmt->affected_rows;
         $stmt->close();
-        return ($filasAfectadas > 0);
+        return $filasAfectadas > 0;
+    }
+
+    public function __destruct()
+    {
+        $this->db->close();
     }
 }

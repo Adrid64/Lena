@@ -1,80 +1,69 @@
+/* =========================================================
+   Carrusel 
+   ========================================================= */
 "use strict";
-
-// ---------------------------------------------------
-// 1) CARUSEL CLASS
-// ---------------------------------------------------
 class Carrusel {
   constructor() {
-    // Seleccionamos el <article> dentro del primer <section> de <main>
+    /* Artículo que contiene el carrusel */
     this.$article = $("main > section:first-of-type > article");
 
-    // Todas las imágenes hijas de ese artículo
+    /* Slides = todas las imágenes del artículo */
     this.$slides = this.$article.children("img");
 
-    // Botones: primer botón = retroceder, segundo = avanzar
-    this.$btnPrev = this.$article.children("button").eq(0);
-    this.$btnNext = this.$article.children("button").eq(1);
+    /* Botones de navegación */
+    this.$btnPrev = this.$article.children("button:first-child");
+    this.$btnNext = this.$article.children("button:last-child");
 
-    // Estado del carrusel
     this.curSlide = 0;
     this.maxSlide = this.$slides.length - 1;
 
-    // Posicionar slides y enlazar eventos
     this._initCarrusel();
   }
 
   _initCarrusel() {
-    // Posicionar inicialmente cada slide
-    this._updateSlides();
-
-    // Enlazar clics de navegación
+    this._updateSlides();                          // posición inicial
     this.$btnNext.on("click", () => this._nextSlide());
     this.$btnPrev.on("click", () => this._prevSlide());
   }
 
   _updateSlides() {
-    this.$slides.each((index, img) => {
-      $(img).css("transform", `translateX(${100 * (index - this.curSlide)}%)`);
+    this.$slides.each((i, img) => {
+      $(img).css("transform", `translateX(${100 * (i - this.curSlide)}%)`);
     });
   }
 
   _nextSlide() {
-    if (this.curSlide === this.maxSlide) {
-      this.curSlide = 0;
-    } else {
-      this.curSlide++;
-    }
+    this.curSlide = this.curSlide === this.maxSlide ? 0 : this.curSlide + 1;
     this._updateSlides();
   }
 
   _prevSlide() {
-    if (this.curSlide === 0) {
-      this.curSlide = this.maxSlide;
-    } else {
-      this.curSlide--;
-    }
+    this.curSlide = this.curSlide === 0 ? this.maxSlide : this.curSlide - 1;
     this._updateSlides();
   }
 }
 
-// ---------------------------------------------------
-// 2) NOTICIAS CLASS 
-// ---------------------------------------------------
+/* =========================================================
+   Noticias 
+   ========================================================= */
 class Noticias {
   constructor(apiKey) {
     this.apiKey = apiKey;
-
-    // Seleccionamos el <article> dentro del segundo <section> de <main>
     this.$container = $("main > section:nth-of-type(2) > article");
-
     this._cargarNoticias();
+  }
+
+
+  _nfc(txt) {
+    /* Devuelve la cadena en forma compuesta NFC o '' */
+    return (txt ?? "").normalize("NFC");
   }
 
   _cargarNoticias() {
     const endpoint = "https://newsdata.io/api/1/latest";
     const params = $.param({
       apikey: this.apiKey,
-      q: "Lena Asturias",
+      q: "Lena",
       language: "es",
       country: "es",
       size: 5
@@ -84,54 +73,52 @@ class Noticias {
     this.$container.text("Cargando noticias…");
 
     $.getJSON(url)
-      .done((data) => {
+      .done(data => {
         if (data.status === "success" && Array.isArray(data.results) && data.results.length) {
           this._renderizarNoticias(data.results);
         } else {
-          this.$container.text("No hay noticias disponibles en este momento.");
+          this.$container.empty().append(`
+            <h3>Sin noticias</h3>
+            <p>No hay noticias disponibles en este momento.</p>
+          `);
         }
       })
       .fail((_, textStatus, errorThrown) => {
         console.error("Error al obtener noticias:", textStatus, errorThrown);
-        this.$container.text("Error cargando noticias. Vuelva a intentarlo más tarde.");
+        this.$container.empty().append(`
+          <h3>Error al cargar noticias</h3>
+          <p>No se han podido recuperar las noticias.
+             Vuelve a intentarlo dentro de unos minutos.</p>
+        `);
       });
   }
 
   _renderizarNoticias(articulos) {
     this.$container.empty();
-
     this.$container.append("<h3>Últimas noticias sobre Lena</h3>");
 
     const $ul = $("<ul></ul>");
 
-    articulos.forEach((art) => {
-      const title = art.title || "Título no disponible";
-      const link = art.link || "#";
-      const desc = art.description || "";
+    articulos.forEach(art => {
+      const title   = this._nfc(art.title)       || "Título no disponible";
+      const link    = this._nfc(art.link)        || "#";
+      const desc    = this._nfc(art.description) || "";
       const pubDate = art.pubDate
         ? new Date(art.pubDate).toLocaleDateString("es-ES", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
+            day: "2-digit", month: "2-digit", year: "numeric"
           })
         : "";
 
       const $li = $("<li></li>");
-      const $a = $(`<a></a>`).attr({
-        href: link,
-        target: "_blank",
-        rel: "noopener"
-      }).text(title);
+      const $a  = $("<a></a>", {
+                  href: link,
+                  target: "_blank",
+                  rel: "noopener"
+                }).text(title);
       $li.append($a);
 
-      if (pubDate) {
-        const $pDate = $("<p></p>").text(pubDate);
-        $li.append($pDate);
-      }
-      if (desc) {
-        const $pDesc = $("<p></p>").text(desc);
-        $li.append($pDesc);
-      }
+      if (pubDate) $li.append($("<p></p>").text(pubDate));
+      if (desc)    $li.append($("<p></p>").text(desc));
 
       $ul.append($li);
     });
@@ -140,9 +127,6 @@ class Noticias {
   }
 }
 
-// ---------------------------------------------------
-// 3) AL CARGAR EL DOM
-// ---------------------------------------------------
 $(document).ready(() => {
   new Carrusel();
 

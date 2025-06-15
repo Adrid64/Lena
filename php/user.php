@@ -1,6 +1,6 @@
 <?php
 // php/User.php
-require_once "Database.php";
+require_once "database.php";
 
 class User {
     private $conn;
@@ -11,8 +11,6 @@ class User {
     }
 
     public function __destruct() {
-        // No cerramos aquí porque otras clases podrían reusar la misma conexión
-        // y Database::close() se encarga si se necesita manualmente.
     }
 
     /**
@@ -70,6 +68,7 @@ class User {
     /**
      * Obtiene la información de un usuario por su ID
      */
+
     public function getById($id) {
         $stmt = $this->conn->prepare("SELECT id, nombre, apellidos, email, fecha_registro FROM usuarios WHERE id = ?");
         $stmt->bind_param("i", $id);

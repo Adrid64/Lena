@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Adrian Dumitru">
-  <meta name="description" content="Visualización de rutas">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="author" content="Adrian Dumitru"/>
+  <meta name="description" content="Visualización de rutas"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rutas - Lena</title>
+  <link rel="stylesheet" href="estilo/estilo.css"/>
+  <link rel="stylesheet" href="estilo/layout.css"/>
+  <link rel="icon" href="multimedia/imagenes/favicon.ico" sizes="16x16"/>
 
-  <!-- Solo selectores semánticos; nada de id ni class -->
-  <link rel="stylesheet" href="estilo/estilo.css">
-  <link rel="stylesheet" href="estilo/layout.css">
-  
-  <link rel="icon" href="multimedia/imagenes/favicon.ico" sizes="16x16">
-
-  <!-- jQuery (solo para $(document).ready()) -->
+  <!-- jQuery y tu script se cargan primero -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Google Maps API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU" async defer></script>
-  <!-- Nuestro script de rutas (defer para que cargue tras el DOM) -->
   <script src="js/rutas.js" defer></script>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU&loading=async"
+  async defer>
+</script>
 </head>
 <body>
   <header>
@@ -29,7 +27,7 @@
       <a href="rutas.html">Rutas</a>
       <a href="meteorologia.html">Meteorología</a>
       <a href="juego.html">Juego</a>
-      <a href="php/reservas.php">Reservas</a>
+      <a href="reservas.php">Reservas</a>
       <a href="ayuda.html">Ayuda</a>
     </nav>
   </header>
@@ -40,21 +38,16 @@
     <section>
       <h2>Rutas</h2>
 
-      <!-- 1) Input File para que el usuario suba su XML -->
       <section>
         <h3>Introducir rutas</h3>
         <label for="archivoXml">Selecciona tu fichero XML de rutas:</label>
         <input type="file" id="archivoXml" accept=".xml">
-
-        </label>
       </section>
 
-      <!-- 2) Lugar donde inyectaremos las rutas -->
       <section>
         <h3>Rutas conocidas por Lena</h3>
         <section>
           <h4>Listado de rutas</h4>
-          <!-- Aquí el JS añadirá, para cada <ruta> del XML, un <section> completo -->
         </section>
       </section>
     </section>
