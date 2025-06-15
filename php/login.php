@@ -103,26 +103,29 @@ $errores = $login->errores;
         <h3>Inicie sesión en su cuenta</h3>
         <form action="login.php" method="POST">
             <fieldset>
-                <legend>Credenciales</legend>
-                <p>
-                    <label>
-                        Email:
-                        <input type="email"
-                               name="email"
-                               value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
-                               required>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Contraseña:
-                        <input type="password" name="password" required>
-                    </label>
-                </p>
-                <p>
-                    <button type="submit">Entrar</button>
-                </p>
-            </fieldset>
+  <legend>Credenciales</legend>
+
+  <p>
+    <label for="email">Email</label>
+    <input  type="email"
+            id="email"
+            name="email"
+            value="<?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?>"
+            required>
+  </p>
+
+  <p>
+    <label for="password">Contraseña</label>
+    <input  type="password"
+            id="password"
+            name="password"
+            required>
+  </p>
+
+  <p>
+    <button type="submit">Entrar</button>
+  </p>
+</fieldset>
             <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a>.</p>
         </form>
     </section>
