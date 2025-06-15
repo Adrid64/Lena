@@ -63,7 +63,7 @@ class Noticias {
     const endpoint = "https://newsdata.io/api/1/latest";
     const params = $.param({
       apikey: this.apiKey,
-      q: "Lena",
+      q: "Lena, Asturias",
       language: "es",
       country: "es",
       size: 5

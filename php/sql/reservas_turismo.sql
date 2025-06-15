@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2025 a las 21:20:06
+-- Tiempo de generación: 16-06-2025 a las 00:55:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -101,10 +101,10 @@ CREATE TABLE `reservas` (
 INSERT INTO `reservas` (`id`, `usuario_id`, `recurso_id`, `fecha_reserva`, `fecha_inicio_evento`, `dias`, `hora_evento`, `precio_final`, `estado`, `numero_personas`) VALUES
 (50, 7, 4, '2025-06-12 00:00:00', '2025-06-12', 7, '00:00:00', 420.00, 'activa', 1),
 (51, 8, 4, '2025-06-12 00:00:00', '2025-06-12', 1, '00:00:00', 120.00, 'activa', 2),
-(76, 3, 1, '2025-06-13 00:00:00', '2025-06-13', 1, '09:00:00', 5.00, 'activa', 1),
-(84, 3, 1, '2025-06-13 00:00:00', '2025-06-13', 1, '09:00:00', 5.00, 'activa', 1),
-(86, 3, 5, '2025-06-13 00:00:00', '2025-06-13', 1, '08:00:00', 12.50, 'activa', 1),
-(88, 3, 4, '2025-06-14 00:00:00', '2025-06-14', 1, '14:00:00', 60.00, 'activa', 1);
+(102, 3, 4, '2025-06-15 00:00:00', '2025-06-15', 3, '14:00:00', 1080.00, 'activa', 6),
+(103, 3, 4, '2025-06-15 00:00:00', '2025-06-15', 3, '14:00:00', 1080.00, 'activa', 6),
+(104, 3, 1, '2025-06-15 00:00:00', '2025-06-15', 1, '09:00:00', 5.00, 'activa', 1),
+(105, 3, 1, '2025-06-16 00:00:00', '2025-06-16', 1, '09:00:00', 5.00, 'activa', 1);
 
 -- --------------------------------------------------------
 
@@ -155,7 +155,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password_hash`, `
 (5, 'Adrian', 'Dumitru', 'adrian@gmail.com', '$2y$10$l/P4RGMGc/IUWc4olzVup.kjVIFSux0sCIg.9L/2ThHRA/BpL58jW', '2025-06-11 18:46:15'),
 (6, 'Adrian', 'Dumitru', 'adridumitru02@gmail.com', '$2y$10$dOWR9QsglFowkAH4mMqtquaK..g7u6AXwI1uZ133LSDHJ7Yrs5QPW', '2025-06-11 18:46:51'),
 (7, 'Valentin', 'Dumitru', 'valentindmtr115@gmail.com', '$2y$10$X2TyVdb01EE1M2OX931P/.fWTF9osz/N1p7vZaxlCB0HnJpuZC0/K', '2025-06-12 15:00:20'),
-(8, 'Valentin', 'Dumitru', 'mihaela@gmail.com', '$2y$10$xqE9exAPf2/NvfKQb5Z46.RIZEN9UL6RjemXA9nlnwY/u66sFzQHq', '2025-06-12 18:41:50');
+(8, 'Valentin', 'Dumitru', 'mihaela@gmail.com', '$2y$10$xqE9exAPf2/NvfKQb5Z46.RIZEN9UL6RjemXA9nlnwY/u66sFzQHq', '2025-06-12 18:41:50'),
+(9, 'adrian', 'dumitru', 'adridumitru04@gmail.com', '$2y$10$XHvNT4XEILW21K6Yce2fkeeIdxPDH1CILy5O9SU78pYcy94bcSK.O', '2025-06-15 17:56:03');
 
 --
 -- Índices para tablas volcadas
@@ -216,7 +217,7 @@ ALTER TABLE `recursos_turisticos`
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_recursos`
@@ -228,7 +229,7 @@ ALTER TABLE `tipo_recursos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

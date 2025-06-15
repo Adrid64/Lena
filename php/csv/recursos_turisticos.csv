@@ -1,0 +1,6 @@
+"id","tipo_id","nombre","descripcion","limite_ocupacion","fecha_inicio","hora_inicio","fecha_fin","hora_fin","precio","otros_detalles"
+"1","1","Museo Histórico.","Exhibición de artefactos prehistóricos.","30","2025-06-10","09:00:00","2025-06-10","18:00:00","5.00",NULL
+"2","2","Ruta de los Molinos","Paseo a pie por antiguos molinos del concejo.","20","2025-06-11","10:00:00","2025-06-11","14:00:00","10.00","Dificultad baja"
+"3","3","Restaurante Los Collacios","Degustación de platos típicos asturianos.","50","2025-06-01","13:00:00","2025-06-01","16:00:00","25.00","Menú del día a 15€"
+"4","4","Hotel Ruta de la plata","Alojamiento con vistas a la montaña.","15","2025-06-01","14:00:00","2025-06-01","20:00:00","60.00","Incluye desayuno"
+"5","5","Observación de Aves","Actividad guiada para avistamiento de especies locales.","15","2025-06-15","08:00:00","2025-06-15","12:00:00","12.50","Llevar prismáticos"
