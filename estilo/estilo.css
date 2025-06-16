@@ -7,7 +7,7 @@ body {
   padding: 0em;
 }
 
-/* especificidad: (0, 1, 1)  La advertencia ha sido comprobada. Color de fondo heredado*/
+/* especificidad: (0, 1, 1)  La advertencia ha sido comprobada. Color de fondo heredado y hay contraste suficiente*/
 a:link {
   color: #010100;
 }
@@ -23,7 +23,7 @@ table {
   background-color: #FFFFFF;
   color: #010100;
 }
-/* especificidad: (0, 0, 2) .La advertencia ha sido comprobada. Color heredado de table*/
+/* especificidad: (0, 0, 2) .La advertencia ha sido comprobada. Color heredado de table y hay contraste suficiente*/
 table thead {
   background-color: #FD7F20;
   border-bottom: 0.2rem solid #010100;
@@ -97,7 +97,7 @@ ul ul {
 ul li {
   margin-bottom: 0.7em;
 }
-/* especificidad: (0, 0, 2).La advertencia ha sido comprobada. Color heredado de ol */
+/* especificidad: (0, 0, 2).La advertencia ha sido comprobada. Color heredado de ol y hay contraste suficiente*/
 ol li {
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -106,7 +106,7 @@ ol li {
   border-radius: 0.3rem;
 }
 
-/* especificidad: (0, 0, 2). La advertencia ha sido comprobada. Color de fondo heredado de body*/
+/* especificidad: (0, 0, 2). La advertencia ha sido comprobada. Color de fondo heredado de body y hay contraste suficiente*/
 p a {
   color: #000;
 }
@@ -115,7 +115,7 @@ p a:hover {
   transform: translateY(-0.2rem);
 }
 
-/* ---------- ARTÍCULOS (apariencia) ---------- */
+/* ---------- ARTÍCULOS  ---------- */
 /* especificidad: (0, 0, 1)*/
 article {
   background-color: #f0f4f8;
@@ -182,7 +182,8 @@ main article > button + p{
 th, td { /* especificidad: (0, 0, 1)*/
   font-size: 1rem;
 }
-main video {            /* especificidad: (0, 0, 2)*/
+/* especificidad: (0, 0, 2)*/
+main video {            
   max-width: 100%;
   height: auto;
   display: block;

@@ -224,8 +224,6 @@ header a {
     display: none;
   }
 
-  /* Redefinición controlada de padding-bottom, padding-left, padding-top y padding-right en celdas de tabla.
-     Se redefine aquí respecto a estilos globales para compactar tablas en móviles grandes. */
   /* especificidad: (0, 0, 2)*/
   table td,
   table th {
@@ -233,8 +231,7 @@ header a {
     font-size: 0.5rem;
   }
 
-  /* Redefinición controlada de padding en encabezados de tabla.
-     especificidad: (0, 0, 3)*/
+  /* especificidad: (0, 0, 3)*/
   table thead th {
     padding: 0.3rem 0.4rem;
   }
@@ -264,13 +261,12 @@ header a {
   }
 }
 
-/* ---------- HEADER media-queries ---------- */
 @media (max-width: 1562px) {
-  /*especificidad (0,0,2) Redefinicion de font-size */
+  /*especificidad (0,0,2) Redefinicion controlada de font-size en el header h1 */
     header h1 {
         font-size: 3rem; 
     }
-    /*especificidad (0,0,3) */
+    /*especificidad (0,0,3) Redefinicion controlada de font-size en header nav a*/
     header nav a {
         font-size: 1.2rem; 
     }
@@ -278,18 +274,19 @@ header a {
 
 /* Redefinicion de font-size */
 @media (max-width: 1250px) {
-  /*especificidad (0,0,2) */
+  /*especificidad (0,0,2)  Redefinicion controlada de font-size en el header h1 */
     header h1 {
         font-size: 2rem; 
     }
-    /*especificidad (0,0,3) */
+    /*especificidad (0,0,3) Redefinicion controlada de font-size en header nav a*/
     header nav a {
         font-size: 0.8rem;
     }
 }
 
-/* Redefinicion de font-size y align-items */
+
 @media (max-width: 895px) {
+/* Redefinicion controlada de align-items en header*/
   /*especificidad (0,0,1) */
     header {
         flex-direction: column;
@@ -299,7 +296,7 @@ header a {
     header h1 {
         margin-bottom: 1rem;
     }
-    /*especificidad (0,0,2) */
+    /*especificidad (0,0,2) Redefinición controlada de display, max-width y padding-right en header nav*/
     header nav {
         display: flex;
         flex-direction: column;

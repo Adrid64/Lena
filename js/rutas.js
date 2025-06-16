@@ -11,7 +11,7 @@ class RutasCompletas {
   }
 
   /* ---------------------------------------------------------
-     1 · Carga y parseo del XML
+     Carga y parseo del XML
   --------------------------------------------------------- */
   _leerXML (file) {
     if (!file) return;
@@ -32,12 +32,11 @@ class RutasCompletas {
   }
 
   /* ---------------------------------------------------------
-     2 · Procesamiento de cada <ruta>
+      Procesamiento de cada <ruta>
   --------------------------------------------------------- */
   _procesarRuta (nodo, idx) {
     const txt = sel => nodo.querySelector(sel)?.textContent.trim() || "";
 
-    // Datos básicos
     const nombre      = txt("nombre")      || `Ruta ${idx}`;
     const tipo        = txt("tipo");
     const transporte  = txt("transporte");
@@ -47,7 +46,6 @@ class RutasCompletas {
     const personas    = txt("personas");
     const recomend    = txt("recomendacion");
 
-    // Bloque INICIO
     const ini = nodo.querySelector("inicio");
     let inicioHTML = "";
     if (ini) {
@@ -64,7 +62,6 @@ class RutasCompletas {
         </ul>`;
     }
 
-    // Bloque REFERENCIAS
     const refs = Array.from(nodo.querySelectorAll("referencias > referencia"))
                       .map(r => r.textContent.trim());
     const refsHTML = refs.length
@@ -75,7 +72,6 @@ class RutasCompletas {
            }).join("")}</ul>`
       : "";
 
-    // Bloque HITOS 
     const hitos = Array.from(nodo.querySelectorAll("hitos > hito")).map(h => {
       const n   = h.querySelector("nombre")?.textContent.trim()        || "";
       const d   = h.querySelector("descripcion")?.textContent.trim()   || "";
@@ -97,15 +93,14 @@ class RutasCompletas {
       }
 
       return `<li>
-                ${n} (${km} km)<br>
-                ${d}<br>
+                ${n} (${km} km)
+                ${d}
                 Coords: (${lat}, ${lng}), alt ${alt} m
                 ${galeriaHTML}
               </li>`;
     });
     const hitosHTML = hitos.length ? `<h5>Hitos</h5><ul>${hitos.join("")}</ul>` : "";
 
-    // Coordenadas para mapa / polilínea
     const coords = [];
     if (ini) coords.push({
       lat: parseFloat(ini.querySelector("coordenadas > latitud")?.textContent),
@@ -118,14 +113,12 @@ class RutasCompletas {
       });
     });
 
-    // Crear <section> principal de la ruta
     const sec = document.createElement("section");
     sec.append(
       Object.assign(document.createElement("h4"), { textContent: nombre }),
       Object.assign(document.createElement("p"),  { textContent: descripcion })
     );
 
-    // <dl> de datos
     const dl = document.createElement("dl");
     [
       ["Tipo",         tipo],
@@ -224,7 +217,6 @@ class RutasCompletas {
   }
 }
 
-/*  Arranque  */
 $(document).ready(() => {
   new RutasCompletas("AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU");
 });

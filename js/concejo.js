@@ -3,8 +3,6 @@
 class Concejo {
   /**
    * Constructor de Concejo.
-   * @param {string} nombre - Nombre descriptivo del concejo 
-   * @param {string} coordenadas - Latitud y longitud 
    */
   constructor(nombre, coordenadas) {
     this.nombre = nombre;
@@ -42,7 +40,6 @@ class Concejo {
 
   /**
    * Procesa la respuesta JSON de Visual Crossing.
-   * @param {Object} data - El JSON retornado por la API.
    */
   procesarDatosVisualCrossing(data) {
     // currentConditions viene en data.currentConditions

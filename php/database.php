@@ -21,14 +21,14 @@ class Database {
     }
 
     /**
-     * Devuelve la instancia de conexión (mysqli)
+     * Devuelve la instancia de conexión 
      */
     public function getConnection() {
         return $this->conn;
     }
 
     /**
-     * Cierra la conexión (opcional)
+     * Cierra la conexión 
      */
     public function close() {
         if ($this->conn !== null) {
