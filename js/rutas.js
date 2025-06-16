@@ -1,18 +1,18 @@
-/* js/rutas.js – versión sin id, sin class, sin div, sin etiquetas de estilo */
+/* js/rutas.js */
 "use strict";
 
 class RutasCompletas {
   constructor (apiKey) {
     this.apiKey      = apiKey;
     this.$fileInput  = $("main > section > section input[type=file]");
-    this.$contenedor = $("main > section > section + section");   /* contenedor general */
+    this.$contenedor = $("main > section > section + section");
 
     this.$fileInput.on("change", e => this._leerXML(e.target.files[0]));
   }
 
-  /* --------------------------------------------------------- */
-  /* 1 · Carga y parseo del XML                                */
-  /* --------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     1 · Carga y parseo del XML
+  --------------------------------------------------------- */
   _leerXML (file) {
     if (!file) return;
     const reader = new FileReader();
@@ -26,18 +26,18 @@ class RutasCompletas {
       console.error("Error al parsear el XML.");
       return;
     }
-    this.$contenedor.empty();                       /* limpieza */
+    this.$contenedor.empty();
     Array.from(xml.querySelectorAll("ruta"))
          .forEach((nodo, i) => this._procesarRuta(nodo, i + 1));
   }
 
-  /* --------------------------------------------------------- */
-  /* 2 · Procesamiento de cada <ruta>                          */
-  /* --------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     2 · Procesamiento de cada <ruta>
+  --------------------------------------------------------- */
   _procesarRuta (nodo, idx) {
     const txt = sel => nodo.querySelector(sel)?.textContent.trim() || "";
 
-    /* ── Datos base ────────────────────────────────────────── */
+    // Datos básicos
     const nombre      = txt("nombre")      || `Ruta ${idx}`;
     const tipo        = txt("tipo");
     const transporte  = txt("transporte");
@@ -47,7 +47,7 @@ class RutasCompletas {
     const personas    = txt("personas");
     const recomend    = txt("recomendacion");
 
-    /* ── Bloque INICIO ─────────────────────────────────────── */
+    // Bloque INICIO
     const ini = nodo.querySelector("inicio");
     let inicioHTML = "";
     if (ini) {
@@ -64,7 +64,7 @@ class RutasCompletas {
         </ul>`;
     }
 
-    /* ── Bloque REFERENCIAS ────────────────────────────────── */
+    // Bloque REFERENCIAS
     const refs = Array.from(nodo.querySelectorAll("referencias > referencia"))
                       .map(r => r.textContent.trim());
     const refsHTML = refs.length
@@ -75,7 +75,7 @@ class RutasCompletas {
            }).join("")}</ul>`
       : "";
 
-    /* ── Bloque HITOS ──────────────────────────────────────── */
+    // Bloque HITOS 
     const hitos = Array.from(nodo.querySelectorAll("hitos > hito")).map(h => {
       const n   = h.querySelector("nombre")?.textContent.trim()        || "";
       const d   = h.querySelector("descripcion")?.textContent.trim()   || "";
@@ -84,7 +84,6 @@ class RutasCompletas {
       const lng = h.querySelector("coordenadas > longitud")?.textContent.trim() || "";
       const alt = h.querySelector("coordenadas > altitud")?.textContent.trim()  || "";
 
-      /* Galería de fotos (máx. 5) */
       const fotos = Array.from(h.querySelectorAll("galeriaFotos > fotografia"))
                          .map(f => f.textContent.trim());
       let galeriaHTML = "";
@@ -104,10 +103,9 @@ class RutasCompletas {
                 ${galeriaHTML}
               </li>`;
     });
-
     const hitosHTML = hitos.length ? `<h5>Hitos</h5><ul>${hitos.join("")}</ul>` : "";
 
-    /* ── Coordenadas para polilínea / centro de mapa ───────── */
+    // Coordenadas para mapa / polilínea
     const coords = [];
     if (ini) coords.push({
       lat: parseFloat(ini.querySelector("coordenadas > latitud")?.textContent),
@@ -120,14 +118,14 @@ class RutasCompletas {
       });
     });
 
-    /* ── Construcción de la sección ruta ───────────────────── */
+    // Crear <section> principal de la ruta
     const sec = document.createElement("section");
-
     sec.append(
       Object.assign(document.createElement("h4"), { textContent: nombre }),
       Object.assign(document.createElement("p"),  { textContent: descripcion })
     );
 
+    // <dl> de datos
     const dl = document.createElement("dl");
     [
       ["Tipo",         tipo],
@@ -144,27 +142,30 @@ class RutasCompletas {
     });
     sec.appendChild(dl);
 
+    // Secciones auxiliares
     if (inicioHTML) sec.appendChild(this._htmlToSection(inicioHTML));
     if (refsHTML)   sec.appendChild(this._htmlToSection(refsHTML));
     if (hitosHTML)  sec.appendChild(this._htmlToSection(hitosHTML));
 
-    /* ── Mapa dinámico ─────────────────────────────────────── */
-    const mapHolder = document.createElement("section");
-    mapHolder.appendChild(
-      Object.assign(document.createElement("h5"), { textContent: "Mapa de la ruta" })
-    );
-    sec.append(mapHolder);
+    const mapSection = document.createElement("section");
+    const tituloMapa = document.createElement("h5");
+    tituloMapa.textContent = "Mapa de la ruta";
+    mapSection.appendChild(tituloMapa);
 
-    /* ── Altimetría + planimetría ──────────────────────────── */
+    const mapHolder = document.createElement("section");
+    mapSection.appendChild(mapHolder);
+
+    sec.append(mapSection);
+
+    // Altimetría y KML
     let svgUrl = nodo.querySelector("altimetria")?.getAttribute("archivo")  || "";
     let kmlUrl = nodo.querySelector("planimetria")?.getAttribute("archivo") || "";
     if (svgUrl && !/^https?:\/\//i.test(svgUrl)) svgUrl = `xml/${svgUrl}`;
     if (kmlUrl && !/^https?:\/\//i.test(kmlUrl)) kmlUrl = `xml/${kmlUrl}`;
-
     if (svgUrl) this._cargaSVG(svgUrl, sec);
+
     this._initMap(mapHolder, coords, kmlUrl);
 
-    /* ── Añadimos la ruta al documento ─────────────────────── */
     this.$contenedor.append(sec);
   }
 
@@ -179,8 +180,9 @@ class RutasCompletas {
     fetch(url)
       .then(r => r.ok ? r.text() : Promise.reject(r.status))
       .then(txt => {
-        const svg = new DOMParser().parseFromString(txt, "image/svg+xml")
-                                   .documentElement;
+        const svg = new DOMParser()
+                      .parseFromString(txt, "image/svg+xml")
+                      .documentElement;
         const fig = document.createElement("figure");
         fig.append(
           Object.assign(document.createElement("figcaption"), { textContent: "Altimetría" }),
@@ -203,16 +205,26 @@ class RutasCompletas {
       const layer = new google.maps.KmlLayer({ url: kmlUrl, map });
       layer.addListener("status_changed", () => {
         if (layer.getStatus() !== google.maps.KmlLayerStatus.OK) {
-          new google.maps.Polyline({ path: coords, strokeColor: "#FF0000", strokeWeight: 4, map });
+          new google.maps.Polyline({
+            path: coords,
+            strokeColor: "#FF0000",
+            strokeWeight: 4,
+            map
+          });
         }
       });
     } else if (coords.length) {
-      new google.maps.Polyline({ path: coords, strokeColor: "#FF0000", strokeWeight: 4, map });
+      new google.maps.Polyline({
+        path: coords,
+        strokeColor: "#FF0000",
+        strokeWeight: 4,
+        map
+      });
     }
   }
 }
 
-/* ░░░ Arranque ░░░ */
+/*  Arranque  */
 $(document).ready(() => {
   new RutasCompletas("AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU");
 });
