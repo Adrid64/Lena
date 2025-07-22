@@ -18,7 +18,7 @@ class Concejo {
    * Se obtienen los datos de currentConditions y days.
    */
   obtenerDatos() {
-    const apiKey = '4YN6GXVJJUP8H6FMT2FCV6U9P';
+    const apiKey = 'YOUR_API_KEY';
     const [latitud, longitud] = this.coordenadas;
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latitud},${longitud}?unitGroup=metric&include=current,days&lang=es&key=${apiKey}`;
 
