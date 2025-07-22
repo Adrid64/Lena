@@ -1,124 +1,124 @@
-# 🏞️ Proyecto Web: Rutas Turísticas de Lena
+# 🏞️ Web Project: Lena Tourist Routes
 
-**Visualización interactiva de rutas turísticas para el concejo de Lena (Asturias)**. Desarrollado con tecnologías web modernas, orientado a la accesibilidad y al cumplimiento estricto de estándares.
-
----
-
-## 📋 Índice
-
-- [🎯 Objetivo del proyecto](#-objetivo-del-proyecto)
-- [🧩 Tecnologías utilizadas](#-tecnologías-utilizadas)
-- [🗺️ Funcionalidades principales](#-funcionalidades-principales)
-- [🧑‍💻 Estructura del proyecto](#-estructura-del-proyecto)
-- [⚙️ Instrucciones de instalación](#️-instrucciones-de-instalación)
-- [🗄️ Base de datos](#️-base-de-datos)
-- [🧪 Pruebas de usabilidad](#-pruebas-de-usabilidad)
-- [☁️ Despliegue en la nube](#️-despliegue-en-la-nube)
-- [👨‍🎓 Autoría](#-autoría)
+**Interactive visualization of tourist routes for the Lena municipality (Asturias, Spain)**. Developed with modern web technologies, focused on accessibility and strict standards compliance.
 
 ---
 
-## 🎯 Objetivo del proyecto
+## 📋 Table of Contents
 
-Crear un sitio web accesible, semántico y totalmente funcional para visualizar y gestionar rutas turísticas en el concejo de **Lena (Asturias)**. Este proyecto fue realizado para la asignatura de Software y Estandares para la web(SEW). Incluye:
-
-- Carga dinámica de rutas desde archivos XML.
-- Representación gráfica de altimetrías (SVG) y planimetrías (KML) en Google Maps.
-- Gestión de reservas y recursos turísticos con backend PHP orientado a objetos y MySQL/MariaDB.
-- Cumplimiento estricto de los estándares: HTML5, CSS3 (Flexbox/Grid), WCAG AAA, sin bibliotecas externas.
+- [🎯 Project Objective](#-project-objective)
+- [🧩 Technologies Used](#-technologies-used)
+- [🗺️ Main Features](#-main-features)
+- [🧑‍💻 Project Structure](#-project-structure)
+- [⚙️ Installation Instructions](#️-installation-instructions)
+- [🗄️ Database](#️-database)
+- [🧪 Usability Testing](#-usability-testing)
+- [☁️ Cloud Deployment](#️-cloud-deployment)
+- [👨‍🎓 Author](#-author)
 
 ---
 
-## 🧩 Tecnologías utilizadas
+## 🎯 Project Objective
 
-| Tecnología        | Uso en el proyecto                                         |
+Build an accessible, semantic and fully functional website for displaying and managing tourist routes in **Lena (Asturias)**. This project was created for the subject Web Software and Standards (SEW). It includes:
+
+- Dynamic loading of routes from XML files.
+- Graphical representation of altimetries (SVG) and planimetries (KML) on Google Maps.
+- Management of reservations and tourist resources with object-oriented PHP backend and MySQL/MariaDB.
+- Strict standards compliance: HTML5, CSS3 (Flexbox/Grid), WCAG AAA, no external libraries.
+
+---
+
+## 🧩 Technologies Used
+
+| Technology        | Project Usage                                               |
 |-------------------|------------------------------------------------------------|
-| HTML5 semántico   | Estructura accesible y validación W3C                      |
-| CSS3 (Flex/Grid)  | Maquetación responsive sin float ni posicionamiento absoluto|
-| ECMAScript 6 (OO) | Interactividad y gestión del DOM                           |
-| PHP (POO)         | Backend y acceso a base de datos                           |
-| MySQL / MariaDB   | Base de datos relacional normalizada                       |
-| XML, SVG, KML     | Persistencia de rutas, altimetrías y mapas                 |
-| Google Maps API   | Visualización dinámica de rutas                            |
+| Semantic HTML5    | Accessible structure and W3C validation                    |
+| CSS3 (Flex/Grid)  | Responsive layout, no floats or absolute positioning       |
+| ECMAScript 6 (OO) | Interactivity and DOM management                           |
+| PHP (OOP)         | Backend and database access                                |
+| MySQL / MariaDB   | Normalized relational database                             |
+| XML, SVG, KML     | Route, altimetry, and map persistence                      |
+| Google Maps API   | Dynamic route visualization                                |
 
 ---
 
-## 🗺️ Funcionalidades principales
+## 🗺️ Main Features
 
-- **Carga dinámica de rutas desde XML**
-- **Renderizado de mapas** con polilíneas y capas KML
-- **Visualización de altimetrías** en SVG y galería de fotos (máx. 5)
-- **Formulario de reservas** con cálculo y validación en PHP
-- **Listado y cancelación de reservas**
-- **Diseño responsive** y accesible (WCAG 2.0 AAA)
+- **Dynamic loading of routes from XML**
+- **Map rendering** with polylines and KML layers
+- **Altimetry visualization** in SVG and photo gallery (max. 5)
+- **Reservation form** with calculation and validation in PHP
+- **Listing and cancellation of reservations**
+- **Responsive and accessible design** (WCAG 2.0 AAA)
 
 ---
 
-## 🧑‍💻 Estructura del proyecto
+## 🧑‍💻 Project Structure
 
 ```
 rutas-lena/
 ├── css/
-│   ├── estilo.css         # Estilos generales
-│   └── layout.css         # Flex/Grid y media queries
+│   ├── estilo.css         # General styles
+│   └── layout.css         # Flex/Grid and media queries
 ├── js/
-│   └── rutas.js           # Lógica OO de lectura XML y mapas
+│   └── rutas.js           # OO logic for XML reading and maps
 ├── php/
-│   ├── Database.php       # Conexión POO a MySQL
-│   ├── Resource.php       # Modelo de recurso turístico
-│   ├── Reservation.php    # Modelo de reserva
-│   ├── init.sql           # Sentencias CREATE TABLE y FK
-│   └── datos.csv          # CSV de inicialización de tablas
+│   ├── Database.php       # OOP MySQL connection
+│   ├── Resource.php       # Tourist resource model
+│   ├── Reservation.php    # Reservation model
+│   ├── init.sql           # CREATE TABLE and FK statements
+│   └── datos.csv          # Table initialization CSV
 ├── multimedia/
-│   └── imagenes/          # Fotos de hitos
+│   └── imagenes/          # Landmark photos
 ├── xml/
-│   ├── rutas.xml          # Datos de rutas
-│   ├── altimetria_.svg    # Altimetrías de rutas
-│   └── ruta.kml           # Planimetría KML
+│   ├── rutas.xml          # Route data
+│   ├── altimetria_.svg    # Route altimetries
+│   └── ruta.kml           # KML planimetry
 ├── index.html
 ├── rutas.html
 ├── reservas.php
 ├── ayuda.html
 └── documentacion/
-    └── informe_proyecto.pdf # Portada, ER, usabilidad, despliegue
+    └── informe_proyecto.pdf # Cover, ER diagram, usability, deployment
 ```
 
 ---
 
-## ⚙️ Instrucciones de instalación
+## ⚙️ Installation Instructions
 
-1. **Clona el repositorio:**  
+1. **Clone the repository:**  
    ```bash
-   git clone https://github.com/tuusuario/rutas-lena.git
+   git clone https://github.com/yourusername/rutas-lena.git
    cd rutas-lena
    ```
 
-2. **Configura tu servidor PHP + MySQL** (XAMPP, Laragon, etc.)
+2. **Set up your PHP + MySQL server** (XAMPP, Laragon, etc.)
 
-3. **Importa la base de datos:**
-   - En phpMyAdmin, crea una base de datos nueva.
-   - Ejecuta `php/init.sql` para crear las tablas y relaciones.
-   - (Opcional) Importa `php/datos.csv` para datos de ejemplo.
+3. **Import the database:**
+   - In phpMyAdmin, create a new database.
+   - Run `php/init.sql` to create tables and relationships.
+   - (Optional) Import `php/datos.csv` for sample data.
 
-4. **Ajusta credenciales en `php/Database.php`:**
+4. **Edit credentials in `php/Database.php`:**
    ```php
    $usuario  = "DBUSER2025";
    $password = "DBPWD2025";
-   $bd       = "nombre_basedatos";
+   $bd       = "database_name";
    ```
 
-5. **Accede a la aplicación:**  
-   Abre `rutas.html` en tu navegador y prueba cargando `xml/rutas.xml`.
+5. **Access the app:**  
+   Open `rutas.html` in your browser and test loading `xml/rutas.xml`.
 
-> **Nota:** En el documento `documentacion/informe_proyecto.pdf` se incluye una explicación más detallada de las instrucciones de instalación, con capturas y ejemplos paso a paso.
+> **Note:** In `documentacion/informe_proyecto.pdf` you will find a more detailed installation guide, with screenshots and step-by-step examples.
 
 ---
 
-## 🗄️ Base de datos
+## 🗄️ Database
 
-- 5 tablas normalizadas relacionadas mediante claves foráneas (FK).
-- Diagrama Entidad–Relación incluido en la documentación.
-- Tablas:
+- 5 normalized tables related via foreign keys (FK).
+- Entity–Relationship diagram included in the documentation.
+- Tables:
   - `usuarios`
   - `tipo_recursos`
   - `recursos_turisticos`
@@ -127,27 +127,27 @@ rutas-lena/
 
 ---
 
-## 🧪 Pruebas de usabilidad
+## 🧪 Usability Testing
 
-- **Dispositivos:** Escritorio, tablet y móvil.
-- **Participantes:** 12 usuarios de distintas edades.
-- **Tareas:** Visualizar rutas, calcular precio, crear/cancelar reservas.
-- **Resultados:** Informe detallado en `documentacion/informe_proyecto.pdf`.
-
----
-
-## ☁️ Despliegue en la nube
-
-- **Servidor:** Ubuntu 20.04 + Apache + MySQL
-- **Proceso:** Puesta en marcha remota, importación de datos y pruebas finales
-- **URL:** (se omite por privacidad académica)
+- **Devices:** Desktop, tablet, mobile.
+- **Participants:** 12 users of different ages.
+- **Tasks:** View routes, calculate price, create/cancel reservations.
+- **Results:** Detailed report in `documentacion/informe_proyecto.pdf`.
 
 ---
 
-## 👨‍🎓 Autoría
+## ☁️ Cloud Deployment
+
+- **Server:** Ubuntu 20.04 + Apache + MySQL
+- **Process:** Remote setup, data import, and final testing
+- **URL:** (omitted for academic privacy)
+
+---
+
+## 👨‍🎓 Author
 
 [Adrian Dumitru]  
-Universidad de Oviedo — Grado en Ingeniería Informática del software 
-UO: UO295652 | Curso: 2024/2025 | Asignatura: Software y estándares para la web
+University of Oviedo — Bachelor’s Degree in Software Engineering  
+UO: UO295652 | Academic year: 2024/2025 | Subject: Web Software and Standards
 
-Este proyecto cumple todos los requisitos académicos: POO en PHP, CSS Grid/Flexbox, accesibilidad AAA y uso exclusivo de tecnologías nativas.
+This project fulfills all academic requirements: PHP OOP, CSS Grid/Flexbox, AAA accessibility, and exclusive use of native technologies.
